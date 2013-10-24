@@ -1,21 +1,20 @@
 require_relative '../../db/config'
-require 'date'
 
 class Student < ActiveRecord::Base
 
-  attr_reader :birthday, :first_name, :last_name
+  attr_accessor :first_name, :last_name, :gender, :birthday, :email, :phone
 
-  def initialize(args)
-  	@first_name = args[:first_name]
-  	@last_name = args[:last_name]
-  	@gender = args[:gender]
-  	@birthday = args[:birthday]
-  	@email = args[:email]
-  	@phone = args[:phone]
+  def initialize(args = {})
+    @first_name = args[:first_name]
+    @last_name = args[:last_name]
+    @gender = args[:gender]
+    @birthday = args[:birthday]
+    @email = args[:email]
+    @phone = args[:phone]
   end
 
   def name
-  	"#{first_name} #{last_name}"
+    "#{first_name} #{last_name}"
   end
 
   def age
