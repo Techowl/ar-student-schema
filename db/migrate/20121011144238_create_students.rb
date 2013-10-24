@@ -11,6 +11,7 @@ class CreateStudents < ActiveRecord::Migration
       t.date :birthday
       t.string :email
       t.string :phone
+      # t.integer :teacher_id
 
       t.timestamps
     end
